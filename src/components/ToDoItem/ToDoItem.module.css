@@ -1,0 +1,33 @@
+.item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 10px;
+	margin-top: 10px;
+	border: 1px solid teal;
+	border-radius: 4px;
+}
+.item:hover {
+	cursor: pointer;
+	background-color: rgba(0,0,0,20%);
+}
+button {
+	cursor: pointer;
+}
+.item.done {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 10px;
+	margin-top: 10px;
+	border: 1px solid grey;
+	border-radius: 4px;
+	background-color: rgba(0,0,0,20%);
+	color: rgb(132, 130, 130);
+}
+.item.done button {
+	color: rgb(132, 130, 130);
+}
+input {
+	cursor: pointer;
+}
