@@ -33,8 +33,11 @@ function App() {
   const [input, setInput] = useState("");
   const [selectedTask, setSelectedTask] = useState({});
   const [modal, setModal] = useState(false);
-  console.log();
 
+  /**
+   * Функция которая добавляет новую задачу в todolist
+   * @param {object} e - объект event
+   */
   const addNewTask = (e) => {
     e.preventDefault();
     if (input) {
@@ -51,13 +54,32 @@ function App() {
       alert("Title is required");
     }
   };
+
+  /**
+   * Функция, которая показывает какая из задач выбрана из списка
+   * @param {string} taskId - id выбранной задачи
+   * @returns возвращает данные задачи, выбранной из списка
+   */
   const onItemSelect = (taskId) => {
     setModal(true);
     return setSelectedTask(tasks.find((task) => task.id === taskId));
   };
+
+  /**
+   * Функция, которая удаляет задачу из списка
+   * @param {string} taskId - id выбранной задачи
+   * @returns возвращает данные всех задач, кроме выбранной из списка
+   */
   const deleteTask = (taskId) => {
     return setTasks(tasks.filter((task) => task.id !== taskId));
   };
+
+  /**
+   * Функция, которая отслеживает изменения чекбокса в задаче
+   * @param {string} taskId - id выбранной задачи
+   * @param {object} e - объект event
+   * @returns возвращает данные задач c изменениями в свойстве checked
+   */
   const onChangeCheckbox = (taskId, e) => {
     if (e.target.checked) {
       setTasks(
@@ -75,6 +97,13 @@ function App() {
       );
     }
   };
+
+  /**
+   * Функция, которая отслеживает значение инпута с датой
+   * @param {string} taskId - id выбранной задачи
+   * @param {string} inputDate - дата выбранная в календаре
+   * @returns возвращает данные задач c изменениями в свойстве date
+   */
   const onChangeDate = (taskId, inputDate) => {
     setTasks(
       tasks.map((task) => {
@@ -83,6 +112,13 @@ function App() {
       })
     );
   };
+
+  /**
+   * Функция, которая отслеживает значение инпута с загрузкой файлов
+   * @param {string} taskId - id выбранной задачи
+   * @param {object} e - объект event
+   * @returns возвращает данные задач c изменениями в свойстве files
+   */
   const onDropFiles = (taskId, e) => {
     e.preventDefault();
     setTasks(

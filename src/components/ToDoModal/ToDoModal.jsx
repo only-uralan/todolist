@@ -6,6 +6,9 @@ import c from "./ToDoModal.module.css";
  * @param {object} task - объект, с данными выделенной задачи
  * @param {boolean} modal - булевый тип, отвечает за отображение модального окна
  * @param {boolean} setModal - функция, которая устанавливает значение visible, принимает булевые
+ * @param {function} onChangeDate - функция, которая отслеживает значение инпута с датой
+ * @param {function} onDropFiles - функция, которая отслеживает значение инпута с загрузкой файлов
+ *	@returns {React.ReactElement} ToDoModal - модальное окно
  */
 const ToDoModal = ({ task, modal, setModal, onChangeDate, onDropFiles }) => {
   if (modal) {

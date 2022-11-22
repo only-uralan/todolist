@@ -2,9 +2,13 @@ import React from "react";
 import c from "./ToDoItem.module.css";
 
 /**
- *
- * @param {*} props
- * @returns
+ * Создает компонент задачи в Todolist
+ * @typedef {object} Props
+ * @property {object} task - объект, с данными выделенной задачи
+ * @property {function} onItemSelect - функция, которая показывает какая из задач выбрана из списка
+ * @property {function} deleteTask - функция, которая удаляет задачу из списка
+ * @property {function} onChangeCheckbox - функция, которая отслеживает изменения чекбокса в задаче
+ * @returns {React.ReactElement} ToDoItem - задача в списке todolist
  */
 const ToDoItem = (props) => {
   const currentDate = new Date();
